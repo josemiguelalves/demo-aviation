@@ -1,7 +1,6 @@
 package com.demo.aviation
 
-import org.apache.camel.main.Main
-import org.apache.camel.scala.dsl.builder.RouteBuilderSupport
+
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
@@ -15,7 +14,7 @@ import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
  * A Main to run Camel with MyRouteBuilder
  */
 object MoveKafakaHDFS extends App {
-  val conf = new SparkConf().setAppName("Demo Aviation Data").setMaster("spark://spark-master:7077").set("spark.streaming.kafka.maxRatePerPartition", "3000")
+  val conf = new SparkConf().setAppName("Demo Aviation Data").setMaster("spark://spark-master-demo:7077").set("spark.streaming.kafka.maxRatePerPartition", "3000")
 
   // val conf = new SparkConf().setAppName("appName").setMaster("local[*]").set("spark.streaming.kafka.maxRatePerPartition", "100")
   val streamingContext = new StreamingContext(conf, Seconds(9000))

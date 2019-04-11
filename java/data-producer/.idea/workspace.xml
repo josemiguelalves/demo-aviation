@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MyRouteBuilder.scala" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />

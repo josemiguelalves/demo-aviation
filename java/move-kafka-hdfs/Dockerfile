@@ -2,10 +2,10 @@ FROM bde2020/spark-submit:2.3.0-hadoop2.7
 
 MAINTAINER Jose Miguel <jose.miguel.usp@gmail.com>
 
-ARG JAR_NAME=traffic-data-orc-1.0-SNAPSHOT
+ARG JAR_NAME=move-kafka-hdfs-1.0-SNAPSHOT
 
 ENV SPARK_APPLICATION_JAR_NAME $JAR_NAME
-ENV SPARK_APPLICATION_MAIN_CLASS com.iot_datamining.dataingestion.TrafficDataOrc
+ENV SPARK_APPLICATION_MAIN_CLASS com.demo.aviation.MoveKafakaHDFS
 ENV SPARK_SUBMIT_ARGS --executor-memory 4G --total-executor-cores 4
 
 
