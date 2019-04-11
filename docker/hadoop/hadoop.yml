@@ -54,7 +54,6 @@ services:
     hostname: datanode-demo-2
     volumes:
      - /storage/st02/jalves7/projects/demo-aviation/hadoop/datanode2:/hadoop/dfs/data
-      - hadoop_dir/datanode2:/hadoop/dfs/data
     environment:
       SERVICE_PRECONDITION: "namenode-demo:50070"
       HDFS_CONF_dfs_datanode_address: datanode-demo-2:50012
@@ -74,7 +73,6 @@ services:
     hostname: datanode-demo-3
     volumes:
      - /storage/st03/jalves7/projects/demo-aviation/hadoop/datanode3:/hadoop/dfs/data
-      - hadoop_dir/datanode3:/hadoop/dfs/data
     environment:
       SERVICE_PRECONDITION: "namenode-demo:50070"
       HDFS_CONF_dfs_datanode_address: datanode-demo-3:50013
