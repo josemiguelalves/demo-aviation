@@ -1,7 +1,6 @@
 version: '3.3'
 services:
-
-  kafka1:
+  kafka1-demo-aviation:
     image: wurstmeister/kafka:latest
     hostname: kafka1
     environment:
@@ -22,7 +21,7 @@ services:
       JMX_PORT: 1099 
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock
-       - /storage/st01/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+#       - /storage/st01/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
@@ -31,7 +30,7 @@ services:
       cm_project:
               aliases:
                 - kafka1
-  kafka2:
+  kafka2-demo-aviation:
     image: wurstmeister/kafka:latest
     hostname: kafka2
     environment:
@@ -52,7 +51,7 @@ services:
       JMX_PORT: 1099
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock 
-       - /storage/st02/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+#       - /storage/st02/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
@@ -62,7 +61,7 @@ services:
                  aliases:
                     - kafka2
 
-  kafka3:
+  kafka3-demo-aviation:
     image: wurstmeister/kafka:latest
     hostname: kafka3
     environment:
@@ -83,7 +82,7 @@ services:
       JMX_PORT: 1099
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock
-       - /storage/st03/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+#       - /storage/st03/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
@@ -92,8 +91,7 @@ services:
       cm_project:
              aliases:
                - kafka3
-
 networks:
    cm_project:
     external:
-      name: 	demo-aviation
+      name: demo-aviation
