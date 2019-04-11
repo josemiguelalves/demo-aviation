@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  data-producer-scheduler:
+    hostname: data-producer-scheduler
+    image: jalves7/data-generator-scheduler:1.0-SNAPSHOT
+    networks:
+      cm_project:
+             aliases:
+               - data-producer-scheduler
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+
+networks:
+   cm_project:
+        external:
+         name: demo-aviation
