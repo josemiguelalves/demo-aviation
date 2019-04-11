@@ -96,4 +96,4 @@ services:
 networks:
    cm_project:
     external:
-      name: jalves7
+      name: 	demo-aviation

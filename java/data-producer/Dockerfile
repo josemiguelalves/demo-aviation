@@ -13,8 +13,12 @@ EXPOSE 8115
 # The application's jar file
 ARG JAR_FILE=target/data-producer-0.0.1-SNAPSHOT.jar
 
+ARG CSV_FILE=takeoff_climb_1.csv
+
 # Add the application's jar to the container
 ADD ${JAR_FILE} data-producer-0.0.1-SNAPSHOT.jar
+
+ADD ${CSV_FILE} takeoff_climb_1.csv
 
 # Add bash 
 RUN apk add --no-cache bash gawk sed grep bc coreutils

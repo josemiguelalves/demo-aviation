@@ -46,7 +46,7 @@ public class DataProducerService {
         Pattern pattern = Pattern.compile(REGEX);
         JsonFactory fac = new JsonFactory();
         StringWriter writer=new StringWriter();
-        try (BufferedReader in = new BufferedReader(new FileReader("/home/jose/projects/demo-aviation/data-sample/takeoff_climb_1.csv"));
+        try (BufferedReader in = new BufferedReader(new FileReader("/takeoff_climb_1.csv"));
              JsonGenerator gen = fac.createGenerator(writer);) {
             String[] headers = pattern.split(in.readLine());
      //       gen.writeStartArray();
