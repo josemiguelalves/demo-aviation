@@ -2,3 +2,4 @@
 /home/jose/projects/demo-aviation/java/data-producer/src/main/java/com/demo/aviation/service/DataProducerService.java
 /home/jose/projects/demo-aviation/java/data-producer/src/main/java/com/demo/aviation/controller/DataProducerController.java
 /home/jose/projects/demo-aviation/java/data-producer/src/main/java/com/demo/aviation/DataProducerApplication.java
+/home/jose/projects/demo-aviation/java/data-producer/src/main/java/com/demo/aviation/service/CSV.java
