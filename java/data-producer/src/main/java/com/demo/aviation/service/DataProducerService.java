@@ -76,7 +76,7 @@ public class DataProducerService {
 
     }
 
-    public void executeResponse3(String simulator) throws Exception {
+    public void executeResponse3(String fligtSimulator) throws Exception {
 
 
         try (InputStream in = new FileInputStream("/takeoff_climb_1.csv");) {
@@ -101,23 +101,22 @@ public class DataProducerService {
     }
 
 
-    public void executeResponse(String simulator) throws Exception {
+    public void executeResponse(String flightSimulator) throws Exception {
 
 
         File input = new File(csvInput);
         File output = new File("/home/jose/Desktop/output.json");
-
-
 
         DateTime startLocalDate;
         startLocalDate = new DateTime();
         long startDateUnix;
         startDateUnix = (startLocalDate.getMillis() / 1000) - 3600;
 
-        String keyMessage = simulator + "-" + startDateUnix;
+        String keyMessage = flightSimulator + "-" + startDateUnix;
 
 
-        String topic = simulator;
+        String topic = flightSimulator;
+        int messageCount =0;
 
         CsvSchema csvSchema = CsvSchema.builder().setUseHeader(true).setColumnSeparator(';').build();
         CsvMapper csvMapper = new CsvMapper();
@@ -130,9 +129,11 @@ public class DataProducerService {
             MappingIterator<Object> readAll = csvMapper.readerFor(Map.class).with(csvSchema).readValues(input);
             ObjectMapper mapper = new ObjectMapper();
             while (readAll.hasNext()) {
-                System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
+                messageCount++;
+             System.out.println("Message sent to kafka: "+ startDateUnix + " message count "+messageCount + " " + flightSimulator);
+                readAll.next();
 //
-             kafkaTemplate.send(topic, keyMessage, mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
+       //      kafkaTemplate.send(topic, keyMessage, mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
 //
 // doSomeStuffWithObject(mi.next());
 //

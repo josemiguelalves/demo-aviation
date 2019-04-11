@@ -15,13 +15,13 @@ public class DataProducerController {
     private DataProducerService kafkaProducerService;
 
 
-    @RequestMapping(value= "/start-producer/",  method = GET)
+    @RequestMapping(value= "/start-producer",  method = GET)
 
-    public String sendMessage (@RequestParam("simulator") String simulator) {
+    public String sendMessage (@RequestParam("flightSimulator") String flightSimulator) {
 
         try {
 
-            kafkaProducerService.executeResponse(simulator);
+            kafkaProducerService.executeResponse(flightSimulator);
 
         } catch (Exception e) {
 
