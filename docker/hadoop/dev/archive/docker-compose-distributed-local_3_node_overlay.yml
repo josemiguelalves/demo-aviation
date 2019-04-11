@@ -1,0 +1,245 @@
+version: "3"
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    container_name: namenode
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 15070:50070
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.10
+
+  datanode1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    container_name: datanode1
+    volumes:
+      - /storage/st01/jalves7/docker/powersmiths/hadoop/datanode1:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 11075:50075
+    networks:
+             net_external:
+                   ipv4_address: 172.40.0.11 
+
+  datanode2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    container_name: datanode2
+    volumes:
+     - /storage/st01/jalves7/docker/powersmiths/hadoop/datanode2:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 22075:50075
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.12
+
+  datanode3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    container_name: datanode3
+    volumes:
+     - /storage/st01/jalves7/docker/powersmiths/hadoop/datanode3:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 32075:50075
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.13
+  datanode4:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    container_name: datanode4
+    volumes:
+     - /storage/st01/jalves7/docker/powersmiths/hadoop/datanode4:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 41075:50075
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.14
+
+
+  resourcemanager:
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop2.7.4-java8
+    container_name: resourcemanager
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 18088:8088
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.15
+
+  nodemanager1:
+    image: bde2020/hadoop-nodemanager:2.0.0-hadoop2.7.4-java8
+    container_name: nodemanager
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 resourcemanager:8088"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 18042:8042
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.16
+
+  historyserver:
+    image: bde2020/hadoop-historyserver:2.0.0-hadoop2.7.4-java8
+    container_name: historyserver
+    volumes:
+      - hadoop_historyserver:/hadoop/yarn/timeline
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 resourcemanager:8088"
+    env_file:
+      - ./hadoop.env
+    ports:
+      - 18188:8188
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.17  
+
+  zoo:
+    image: zookeeper:3.4.10
+    container_name: zoo
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=0.0.0.0:2888:3888
+    ports:
+      - 2181:2181
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.18
+     
+  hbase-master:
+    image: bde2020/hbase-master:latest
+    container_name: hbase-master
+    hostname: hbase-master
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181"
+    ports:
+      - 16010:16010
+      #- 16020:16020
+      - 16000:16000
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.19
+  hbase-region:
+    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+    container_name: hbase-regionserver
+    hostname: hbase-regionserver
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181 hbase-master:16010"
+    ports:
+      - 16039:16030
+      - 16029:16020
+    networks:
+           net_external:
+                   ipv4_address: 172.40.0.20
+  
+  hbase-region1:
+    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+    container_name: hbase-regionserver1
+    hostname: hbase-regionserver1
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region1
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181 hbase-master:16010"
+    ports:
+      - 16031:16030
+      - 16021:16020
+    networks:
+           net_external:
+                   ipv4_address: 172.40.0.21
+#    environment:
+#      - HBASE_CONF_hbase_regionserver_port=16021
+#      - HBASE_CONF_hbase_regionserver_info_port=16031
+
+  hbase-region2:
+    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+    container_name: hbase-regionserver2
+    hostname: hbase-regionserver2
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region2
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181 hbase-master:16010"
+    ports:
+      - 16032:16030
+      - 16022:16020
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.22
+#    environment:
+#      - HBASE_CONF_hbase_regionserver_port=16022
+#      - HBASE_CONF_hbase_regionserver_info_port=16032
+
+  hbase-region3:
+    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+    container_name: hbase-regionserver3
+    hostname: hbase-regionserver3
+    env_file:
+      - ./hbase-distributed-local.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region3
+      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181 hbase-master:16010"
+    ports:
+      - 16033:16030
+      - 16023:16020
+    networks:
+              net_external:
+                   ipv4_address: 172.40.0.23
+#    environment: 
+#      - HBASE_CONF_hbase_regionserver_port=16023
+#      - HBASE_CONF_hbase_regionserver_info_port=16033
+
+#  hbase-region4:
+#    image: bde2020/hbase-regionserver:1.0.0-hbase1.2.6
+#    container_name: hbase-regionserver4
+#    hostname: hbase-regionserver4
+#    env_file:
+#      - ./hbase-distributed-local.env
+#    environment:
+#      HBASE_CONF_hbase_regionserver_hostname: hbase-region4
+#      SERVICE_PRECONDITION: "namenode:50070 datanode1:50075 datanode2:50075 datanode3:50075 datanode4:50075 zoo:2181 hbase-master:16010"
+#    ports:
+#      - 16034:16030
+#      - 16024:16020
+#    networks:
+#              net_external:
+#                   ipv4_address: 172.20.0.24
+
+volumes:
+  hadoop_namenode:
+  hadoop_historyserver:
+
+networks:
+     net_external:
+           external:
+             name: docker_gwbridge
+
+

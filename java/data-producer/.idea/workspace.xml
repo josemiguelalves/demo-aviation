@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="" />
+    <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/hydra.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-hdfs/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/aviation/service/DataProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/aviation/service/DataProducerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT-docker-info.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT-docker-info.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/docker/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/target/docker/image-id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/docker/com.demo.aviation/data-producer-demo-aviation/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/docker/com.demo.aviation/data-producer-demo-aviation/image-id" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="132" column="110" selection-start-line="132" selection-start-column="110" selection-end-line="132" selection-end-column="110" />
+            <state relative-caret-position="51">
+              <caret line="126" selection-start-line="126" selection-end-line="137" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,72 +216,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aviation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aviation" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aviation" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="data-producer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="data-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -353,15 +303,16 @@
       <workItem from="1554980340191" duration="5456000" />
       <workItem from="1554991451216" duration="1533000" />
       <workItem from="1554997151039" duration="4421000" />
-      <workItem from="1555003386161" duration="890000" />
+      <workItem from="1555003386161" duration="2255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25649000" />
+    <option name="totallyTimeSpent" value="27014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1871" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2608219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -476,8 +427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="132" column="110" selection-start-line="132" selection-start-column="110" selection-end-line="132" selection-end-column="110" />
+        <state relative-caret-position="51">
+          <caret line="126" selection-start-line="126" selection-end-line="137" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

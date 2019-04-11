@@ -1,0 +1,87 @@
+version: "3.3"
+
+services:
+  namenodecm:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    hostname: namenodecm
+    volumes:
+      - /storage/st01/jalves7/docker/powersmiths/hadoop-cm/namenode:/hadoop/dfs/name
+      - /storage/st01/jalves7/docker/powersmiths/hadoop-cm/namenode-home:/home
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+                  aliases:
+                    - namenodecm
+
+
+  datanode1cm:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode1cm
+    volumes:
+      - /storage/st01/jalves7/docker/powersmiths/hadoop-cm/datanode1:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenodecm:50070"
+      HDFS_CONF_dfs_datanode_address: datanode1cm:50011
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+                  aliases:
+                    - datanode1cm
+
+  datanode2cm:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode2cm
+    volumes:
+      - /storage/st02/jalves7/docker/powersmiths/hadoop-cm/datanode2:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenodecm:50070"
+      HDFS_CONF_dfs_datanode_address: datanode2cm:50012
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+                  aliases:
+                    - datanode2cm
+
+  
+  datanode3cm:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode3cm
+    volumes:
+      - /storage/st03/jalves7/docker/powersmiths/hadoop-cm/datanode3:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenodecm:50070"
+      HDFS_CONF_dfs_datanode_address: datanode3cm:50013
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+                  aliases:
+                    - datanode3cm
+
+networks:
+     kafka-zookeeper:
+           external:
+             name: kafka-zookeeper
+
+

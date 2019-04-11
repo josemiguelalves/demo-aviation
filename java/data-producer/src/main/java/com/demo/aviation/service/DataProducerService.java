@@ -131,9 +131,9 @@ public class DataProducerService {
             while (readAll.hasNext()) {
                 messageCount++;
              System.out.println("Message sent to kafka: "+ startDateUnix + " message count "+messageCount + " " + flightSimulator);
-                readAll.next();
+//                readAll.next();
 //
-       //      kafkaTemplate.send(topic, keyMessage, mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
+             kafkaTemplate.send(topic, keyMessage, mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
 //
 // doSomeStuffWithObject(mi.next());
 //

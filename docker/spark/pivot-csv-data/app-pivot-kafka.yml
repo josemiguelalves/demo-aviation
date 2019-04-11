@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  app-pivot-csv-data-spark:
+    image: jalves7/spark-java-pivot-kafka:1.0-SNAPSHOT
+    hostname: app-pivot-spark
+    ports:
+     - target: 4040
+       published: 2840
+       protocol: tcp
+       mode: host
+    environment:
+     - ENABLE_INIT_DAEMON=false
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+     mongodb_cm :
+           aliases:
+               - pivot-csv-data-spark
+networks:
+     mongodb_cm:
+           external:
+             name: kafka-zookeeper

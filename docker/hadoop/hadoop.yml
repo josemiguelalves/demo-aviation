@@ -1,0 +1,97 @@
+version: "3.3"
+
+services:
+  namenode-demo:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
+    hostname: namenode-demo
+    volumes:
+      - /storage/st01/jalves7/projects/demo-aviation/hadoop/namenode:/hadoop/dfs/name
+      - /storage/st04/jalves7/projects/demo-aviation/hadoop/home-namenode:/home
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - ./hadoop.env
+#    ports:
+#        - target: 50070
+#          published: 11070
+#          protocol: tcp
+#          mode: host
+#        - target: 9000
+#          published: 19010
+#          protocol: tcp
+#          mode: host
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                  aliases:
+                    - namenode-demo
+
+   datanode-demo-1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode-demo-1
+    volumes:
+      - /storage/st01/jalves7/projects/demo-aviation/hadoop/datanode1/datanode1:/hadoop/dfs/data
+      - /storage/st01/jalves7/projects/circuit-meter/hadoop/datanode1/home:/home 
+    environment:
+      SERVICE_PRECONDITION: "namenode-demo:50070"
+      HDFS_CONF_dfs_datanode_address: datanode-demo-1:50011
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                  aliases:
+                    -  datanode-demo-1
+
+   datanode-demo-2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode-demo-2
+    volumes:
+     - /storage/st02/jalves7/projects/demo-aviation/hadoop/datanode2/:/hadoop/dfs/data
+      - hadoop_dir/datanode2:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode-demo:50070"
+      HDFS_CONF_dfs_datanode_address: datanode-demo-2:50012
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                  aliases:
+                    - datanode-demo-2
+
+  datanode-demo-3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
+    hostname: datanode-demo-3
+    volumes:
+     - /storage/st03/jalves7/projects/demo-aviation/hadoop/datanode3:/hadoop/dfs/data
+      - hadoop_dir/datanode3:/hadoop/dfs/data
+    environment:
+      SERVICE_PRECONDITION: "namenode-demo:50070"
+      HDFS_CONF_dfs_datanode_address: datanode-demo-3:50013
+    env_file:
+      - ./hadoop.env
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                  aliases:
+                    - datanonodecm3
+
+
+networks:
+     cm_project:
+           external:
+             name: demo-aviation
+

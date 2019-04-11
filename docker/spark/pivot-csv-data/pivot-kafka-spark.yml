@@ -1,0 +1,118 @@
+version: '3.3'
+services:
+  spark-master-pivot-kafka:
+    image: bde2020/spark-master:2.3.0-hadoop2.7 
+    hostname: spark-master-pivot-kafka
+    ports:
+      - target: 8080
+        published: 1982
+        protocol: tcp
+        mode: host
+#      - target: 7077
+#        published: 47077
+#        protocol: tcp
+#        mode: host
+    environment:
+      - INIT_DAEMON_STEP=setup_spark
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+           aliases:
+               - spark-master-pivot-kafka
+#      mongodb_cm:
+#           aliases:
+#               - spark-master
+
+
+  spark-worker-pivot-kafka-1:
+    image: bde2020/spark-worker:2.3.0-hadoop2.7
+    hostname: spark-worker-pivot-kafka-1
+    depends_on:
+      - spark-master-pivot-kafka
+    ports:
+      - target: 8081
+        published: 6667
+        protocol: tcp
+        mode: host
+    environment:
+      - "SPARK_MASTER=spark://spark-master-pivot-kafka:7077"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c6
+    networks:
+      kafka-zookeeper:
+            aliases:
+                - spark-worker-pivot-kafka-1
+#      mongodb_cm:
+#           aliases:
+#               - spark-worker-1
+
+  spark-worker-pivot-kafka-2:
+    image: bde2020/spark-worker:2.3.0-hadoop2.7
+    hostname: spark-worker-pivot-kafka-2
+    depends_on:
+      - spark-master-pivot-kafka
+    ports:
+      - target: 8081
+        published: 6668
+        protocol: tcp
+        mode: host
+    environment:
+      - "SPARK_MASTER=spark://spark-master-pivot-kafka:7077"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c7
+    networks:
+      kafka-zookeeper:
+            aliases:
+                - spark-worker-pivot-kafka-2
+#      mongodb_cm:
+#           aliases:
+#               - spark-worker-2
+
+  spark-worker-pivot-kafaka-3:
+    image: bde2020/spark-worker:2.3.0-hadoop2.7
+    hostname: spark-worker-pivot-kafaka-3
+    depends_on:
+      - spark-master
+    ports:
+      - target: 8081
+        published: 6669
+        protocol: tcp
+        mode: host
+    environment:
+      - "SPARK_MASTER=spark://spark-master-pivot-kafka:7077"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+            aliases:
+                - spark-worker-pivot-kafka-3
+#      mongodb_cm:
+#           aliases:
+#               - spark-worker-3
+
+
+networks:
+     kafka-zookeeper:
+           external:
+             name: kafka-zookeeper
+
+
+#networks:
+#   kafka-zookeeper:
+#     driver: overlay
+#     external: true 
+#   mongodb_cm:
+#     driver: overlay
+#     external: true
+
+
+  
