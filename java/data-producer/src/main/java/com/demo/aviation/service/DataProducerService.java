@@ -3,6 +3,7 @@ package com.demo.aviation.service;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ import java.util.regex.Pattern;
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Service;
@@ -26,10 +31,11 @@ public class DataProducerService {
 
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
+    String csvInput = "/takeoff_climb_1.csv";
 
 
 
-    public void executeResponse(String simulator) throws  Exception {
+    public void executeResponse2(String simulator) throws Exception {
 
         DateTime startLocalDate;
         startLocalDate = new DateTime();
@@ -37,15 +43,12 @@ public class DataProducerService {
         startDateUnix = (startLocalDate.getMillis() / 1000) - 3600;
 
 
-        String keyMessage = simulator + "-" +startDateUnix;
 
-
-        String topic = simulator;
 
         String REGEX = ";";
         Pattern pattern = Pattern.compile(REGEX);
         JsonFactory fac = new JsonFactory();
-        StringWriter writer=new StringWriter();
+        StringWriter writer = new StringWriter();
         try (BufferedReader in = new BufferedReader(new FileReader("/takeoff_climb_1.csv"));
              JsonGenerator gen = fac.createGenerator(writer);) {
             String[] headers = pattern.split(in.readLine());
@@ -61,13 +64,89 @@ public class DataProducerService {
                 gen.writeEndObject();
                 gen.writeEndArray();
 
-               kafkaTemplate.send(topic, keyMessage, writer.getBuffer().toString());
+//               String teste
 
-           }
+                // kafkaTemplate.send(topic, keyMessage, writer.getBuffer().toString());
+                System.out.print(writer.getBuffer().toString());
+
+
+            }
 
         }
 
     }
 
+    public void executeResponse3(String simulator) throws Exception {
 
+
+        try (InputStream in = new FileInputStream("/takeoff_climb_1.csv");) {
+            CSV csv = new CSV(true, ';', in);
+            List<String> fieldNames = null;
+            if (csv.hasNext()) fieldNames = new ArrayList<>(csv.next());
+            List<Map<String, String>> list = new ArrayList<>();
+            while (csv.hasNext()) {
+                List<String> x = csv.next();
+                Map<String, String> obj = new LinkedHashMap<>();
+                for (int i = 0; i < fieldNames.size(); i++) {
+                    obj.put(fieldNames.get(i), x.get(i));
+                }
+                list.add(obj);
+            }
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            mapper.writeValue(System.out, list);
+        }
+
+
+    }
+
+
+    public void executeResponse(String simulator) throws Exception {
+
+
+        File input = new File(csvInput);
+        File output = new File("/home/jose/Desktop/output.json");
+
+
+
+        DateTime startLocalDate;
+        startLocalDate = new DateTime();
+        long startDateUnix;
+        startDateUnix = (startLocalDate.getMillis() / 1000) - 3600;
+
+        String keyMessage = simulator + "-" + startDateUnix;
+
+
+        String topic = simulator;
+
+        CsvSchema csvSchema = CsvSchema.builder().setUseHeader(true).setColumnSeparator(';').build();
+        CsvMapper csvMapper = new CsvMapper();
+
+        // Read data from CSV file
+//            List<Object> readAll = csvMapper.readerFor(Map.class).with(csvSchema).readValues(input).readAll();
+
+
+        try (Reader reader = new FileReader(input)) {
+            MappingIterator<Object> readAll = csvMapper.readerFor(Map.class).with(csvSchema).readValues(input);
+            ObjectMapper mapper = new ObjectMapper();
+            while (readAll.hasNext()) {
+                System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
+//
+             kafkaTemplate.send(topic, keyMessage, mapper.writerWithDefaultPrettyPrinter().writeValueAsString(readAll.next()));
+//
+// doSomeStuffWithObject(mi.next());
+//
+            }
+
+
+            // Write JSON formated data to output.json file
+//            mapper.writerWithDefaultPrettyPrinter().writeValue(output, readAll);
+
+            // Write JSON formated data to stdout
+
+        }
+
+
+    }
 }
+
