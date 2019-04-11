@@ -1,7 +1,7 @@
 version: '3.2'
 services:
-  manager-kafka:
-    hostname: manager-kafka
+  manager-kafka-demo-aviation:
+    hostname: manager-kafka-demo-aviation
     image: sheepkiller/kafka-manager:latest
 #    ports:
 #      - target: 9000
@@ -15,7 +15,7 @@ services:
     networks:
       cm_project:
                aliases:
-               - manager-kafka
+               - manager-kafka-demo-aviation
     deploy:
       placement:
         constraints:
