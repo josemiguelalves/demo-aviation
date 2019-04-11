@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.kafka.core.KafkaTemplate;
 
 import java.io.*;
@@ -17,7 +18,9 @@ import org.joda.time.DateTime;
 
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DataProducerService {
 
 
@@ -28,10 +31,7 @@ public class DataProducerService {
 
     public void executeResponse(String simulator) throws  Exception {
 
-        DateTimeFormatter fmt = DateTimeFormat.forPattern("HH:mm:ss");
-        DateTime localDate;
         DateTime startLocalDate;
-
         startLocalDate = new DateTime();
         long startDateUnix;
         startDateUnix = (startLocalDate.getMillis() / 1000) - 3600;
@@ -49,7 +49,6 @@ public class DataProducerService {
         try (BufferedReader in = new BufferedReader(new FileReader("/takeoff_climb_1.csv"));
              JsonGenerator gen = fac.createGenerator(writer);) {
             String[] headers = pattern.split(in.readLine());
-     //       gen.writeStartArray();
             String line;
             while ((line = in.readLine()) != null) {
                 gen.writeStartArray();
@@ -62,11 +61,8 @@ public class DataProducerService {
                 gen.writeEndObject();
                 gen.writeEndArray();
 
-           //     String result=writer.getBuffer().toString();
-                kafkaTemplate.send(topic, keyMessage, writer.getBuffer().toString());
+               kafkaTemplate.send(topic, keyMessage, writer.getBuffer().toString());
 
-//                System.out.println(result);
-//
            }
 
         }
