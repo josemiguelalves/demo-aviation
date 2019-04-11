@@ -1,0 +1,4 @@
+com/demo/aviation/controller/DataProducerController.class
+com/demo/aviation/configuration/KafkaConfiguration.class
+com/demo/aviation/service/DataProducerService.class
+com/demo/aviation/DataProducerApplication.class

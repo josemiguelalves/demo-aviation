@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+
+  client-kafka:
+    image: wurstmeister/kafka:latest
+    hostname: client-kafka
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper1cm:12181
+      KAFKA_LISTENERS: INSIDE://:9092,OUTSIDE://:9094
+      KAFKA_ADVERTISED_HOST_NAME: 129.100.174.152
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://:9092,OUTSIDE://129.100.174.152:9094
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+
+    volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                  aliases:
+                    - client-kafka
+networks:
+   cm_project:
+     external:
+      name: cm_project
+
