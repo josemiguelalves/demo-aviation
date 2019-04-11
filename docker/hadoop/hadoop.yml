@@ -29,7 +29,7 @@ services:
                   aliases:
                     - namenode-demo
 
-   datanode-demo-1:
+  datanode-demo-1:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
     hostname: datanode-demo-1
     volumes:
@@ -49,7 +49,7 @@ services:
                   aliases:
                     -  datanode-demo-1
 
-   datanode-demo-2:
+  datanode-demo-2:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
     hostname: datanode-demo-2
     volumes:
