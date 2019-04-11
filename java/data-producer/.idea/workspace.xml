@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/aviation/configuration/KafkaConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/aviation/configuration/KafkaConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/aviation/configuration/KafkaConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/aviation/configuration/KafkaConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/aviation/controller/DataProducerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/aviation/controller/DataProducerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/aviation/service/DataProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/demo/aviation/service/DataProducerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/DataProducer.class" beforeDir="false" />
-    </list>
+    <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -276,7 +266,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554951846633" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554953163858" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../uwo-lambda-architecture-java-factory/java/lambda-architecture-factory" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -349,12 +339,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554941987485</updated>
-      <workItem from="1554941992205" duration="9055000" />
+      <workItem from="1554941992205" duration="9651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9055000" />
+    <option name="totallyTimeSpent" value="9651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-5" width="2499" height="1445" extended-state="6" />
