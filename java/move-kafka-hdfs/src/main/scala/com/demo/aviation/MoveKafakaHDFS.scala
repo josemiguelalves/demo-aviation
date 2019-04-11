@@ -17,7 +17,7 @@ object MoveKafakaHDFS extends App {
   val conf = new SparkConf().setAppName("Demo Aviation Data").setMaster("spark://spark-master-demo:7077").set("spark.streaming.kafka.maxRatePerPartition", "3000")
 
   // val conf = new SparkConf().setAppName("appName").setMaster("local[*]").set("spark.streaming.kafka.maxRatePerPartition", "100")
-  val streamingContext = new StreamingContext(conf, Seconds(9000))
+  val streamingContext = new StreamingContext(conf, Seconds(300))
   // val streamingContext = new StreamingContext(conf, Seconds(10))
   val spark = SparkSession.builder.config(conf).getOrCreate()
   import spark.implicits._
@@ -53,10 +53,10 @@ object MoveKafakaHDFS extends App {
 
       val timeTimestamp = System.currentTimeMillis/1000;
 
-      val df_date = df.withColumn("year_partition", year(from_unixtime(current_timestamp())))
-        .withColumn("month_partition", month(from_unixtime(current_timestamp())))
-        .withColumn("day_partition", dayofmonth(from_unixtime(current_timestamp())))
-        .withColumn("hour_partition", hour(from_unixtime(current_timestamp())))
+      val df_date = df.withColumn("year_partition", lit(year(from_unixtime(unix_timestamp()))))
+        .withColumn("month_partition", lit(month(from_unixtime(unix_timestamp()))))
+        .withColumn("day_partition", lit(dayofmonth(from_unixtime(unix_timestamp()))))
+        .withColumn("hour_partition", lit(hour(from_unixtime(unix_timestamp()))))
         .withColumn("year", $"year_partition")
         .withColumn("month", $"month_partition")
         .withColumn("day", $"day_partition")
@@ -64,8 +64,10 @@ object MoveKafakaHDFS extends App {
 
       val df_final = df_date.toDF(df_date.columns map (_.toLowerCase): _*)
 
+//      df_final.show(5)
+
       df_final.repartition(1).write.partitionBy("year", "month", "day", "hour")
-        .mode("append").format("orc").save("hdfs://namenodecm:9000/demo-aviation/sensorRawData")
+        .mode("append").format("orc").save("hdfs://namenode-demo:9000/demo-aviation/sensorRawData")
 
     }
 

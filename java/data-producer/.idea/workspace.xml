@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/kafka.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/kafka-zookeper/kafka.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MyRouteBuilder.scala" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,7 +19,7 @@
     <session id="-540958469">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -74,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="126" selection-start-line="126" selection-end-line="137" selection-end-column="36" />
+            <state relative-caret-position="2489">
+              <caret line="127" column="53" lean-forward="true" selection-start-line="127" selection-start-column="53" selection-end-line="127" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="281">
               <caret line="15" selection-start-line="15" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -294,15 +293,16 @@
       <workItem from="1554980340191" duration="5456000" />
       <workItem from="1554991451216" duration="1533000" />
       <workItem from="1554997151039" duration="4421000" />
-      <workItem from="1555003386161" duration="2255000" />
+      <workItem from="1555003386161" duration="2907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27014000" />
+    <option name="totallyTimeSpent" value="27666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1871" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2608219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -315,7 +315,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49194413" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29215896" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -385,16 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="15" selection-start-line="15" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/DataProducerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -417,8 +407,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/service/DataProducerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="126" selection-start-line="126" selection-end-line="137" selection-end-column="36" />
+        <state relative-caret-position="2489">
+          <caret line="127" column="53" lean-forward="true" selection-start-line="127" selection-start-column="53" selection-end-line="127" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="15" selection-start-line="15" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

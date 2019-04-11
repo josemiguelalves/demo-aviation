@@ -23,7 +23,7 @@ services:
       JMX_PORT: 1099 
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock
-#       - /storage/st01/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+       - /storage/st01/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
@@ -55,7 +55,7 @@ services:
       JMX_PORT: 1099
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock 
-#       - /storage/st02/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+       - /storage/st02/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
@@ -88,7 +88,7 @@ services:
       JMX_PORT: 1099
     volumes:
        - /var/run/docker.sock:/var/run/docker.sock
-#       - /storage/st03/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
+       - /storage/st03/jalves7/projects/demo-aviation/kafka/kafka-data:/kafka
     deploy:
       placement:
         constraints:
