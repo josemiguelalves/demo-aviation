@@ -34,7 +34,7 @@ services:
     hostname: datanode-demo-1
     volumes:
       - /storage/st01/jalves7/projects/demo-aviation/hadoop/datanode1/datanode1:/hadoop/dfs/data
-      - /storage/st01/jalves7/projects/circuit-meter/hadoop/datanode1/home:/home 
+      - /storage/st01/jalves7/projects/demo-aviation/hadoop/datanode1/home:/home 
     environment:
       SERVICE_PRECONDITION: "namenode-demo:50070"
       HDFS_CONF_dfs_datanode_address: datanode-demo-1:50011
@@ -53,7 +53,7 @@ services:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
     hostname: datanode-demo-2
     volumes:
-     - /storage/st02/jalves7/projects/demo-aviation/hadoop/datanode2/:/hadoop/dfs/data
+     - /storage/st02/jalves7/projects/demo-aviation/hadoop/datanode2:/hadoop/dfs/data
       - hadoop_dir/datanode2:/hadoop/dfs/data
     environment:
       SERVICE_PRECONDITION: "namenode-demo:50070"
