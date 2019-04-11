@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  sshd-demo-aviation:
+    image: corbinu/ssh-server
+    hostname: sshd-cm-project
+    ports:
+      - target: 22
+        published: 2224
+        protocol: tcp
+        mode: host
+    deploy:
+      placement:
+        constraints:
+           - node.hostname == ebithp-c8
+      restart_policy:
+        condition: on-failure
+    networks:
+      cm_project:
+          aliases:
+              - sshd-c8
+networks:
+     cm_project:
+           external:
+             name: demo-aviation
