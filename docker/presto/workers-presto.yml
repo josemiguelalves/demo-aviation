@@ -1,0 +1,70 @@
+version: "3.3"
+services:
+  presto-worker1-cm:
+    image: shawnzhu/prestodb:0.181
+    hostname: presto-worker1-cm
+#    ports:
+#      - target: 8080
+#        published: 17080
+#        protocol: tcp
+#        mode: host
+    volumes:
+#     - /home/jalves7/docker/presto/worker/home:/home
+     - /storage/st04/jalves7/docker/cm/presto/worker/config.properties:/opt/presto-server-0.181/etc/config.properties
+     - /storage/st04/jalves7/docker/cm/presto/worker1/node.properties:/opt/presto-server-0.181/etc/node.properties
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+         aliases:
+              - presto-worker1-cm
+
+  presto-worker2-cm:
+    image: shawnzhu/prestodb:0.181
+    hostname: presto-worker2-cm
+#    ports:
+#      - target: 8080
+#        published: 17080
+#        protocol: tcp
+#        mode: host
+    volumes:
+#     - /home/jalves7/docker/presto/worker/home:/home
+     - /storage/st04/jalves7/docker/cm/presto/worker2/node.properties:/opt/presto-server-0.181/etc/node.properties
+     - /storage/st04/jalves7/docker/cm/presto/worker/config.properties:/opt/presto-server-0.181/etc/config.properties
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      kafka-zookeeper:
+         aliases:
+             - presto-worker2-cm
+
+
+  presto-worker3-cm:
+    image: shawnzhu/prestodb:0.181
+    hostname: presto-worker3-cm
+#    ports:
+#      - target: 8080
+#        published: 17080
+#        protocol: tcp
+#        mode: host
+    volumes:
+     - /storage/st04/jalves7/docker/cm/presto/worker3/node.properties:/opt/presto-server-0.181/etc/node.properties
+     - /storage/st04/jalves7/docker/cm/presto/worker/config.properties:/opt/presto-server-0.181/etc/config.properties
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c6
+    networks:
+      kafka-zookeeper:
+         aliases:
+              - presto-worker3-cm
+
+networks:
+     kafka-zookeeper:
+           external:
+             name: jalves7
+

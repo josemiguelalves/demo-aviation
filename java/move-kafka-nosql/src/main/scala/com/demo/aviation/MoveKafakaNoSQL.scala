@@ -29,7 +29,7 @@ object MoveKafakaNoSQL extends App {
     "bootstrap.servers" -> "kafka2:9092,kafka3:9092,kafka1:9092",
     "key.deserializer" -> classOf[StringDeserializer],
     "value.deserializer" -> classOf[StringDeserializer],
-    "group.id" -> "demo-aviation-data",
+    "group.id" -> "demo-aviation-nosql",
     "auto.offset.reset" -> "latest",
     "enable.auto.commit" -> (false: java.lang.Boolean)
   )

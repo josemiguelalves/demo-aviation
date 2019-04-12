@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  presto-coordinator:
+    image: shawnzhu/prestodb:0.181
+#    command: coordinator
+    hostname: presto-coordinator
+#    ports:
+#      - target: 8080
+#        published: 17080
+#        protocol: tcp
+#        mode: host
+    volumes:
+#      - $PWD/home:/home
+     - /storage/st04/jalves7/projects/circuit-meter/presto/coordinator/config.properties:/opt/presto-server-0.181/etc/config.properties
+     - /storage/st04/jalves7/projects/circuit-meter/presto/coordinator/jvm.config:/opt/presto-server-0.181/etc/jvm.config
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == ebithp-c8
+    networks:
+      cm_project:
+                 aliases: 
+                  - presto-coordinator
+
+networks:
+     cm_project:
+           external:
+             name: jalves7
+

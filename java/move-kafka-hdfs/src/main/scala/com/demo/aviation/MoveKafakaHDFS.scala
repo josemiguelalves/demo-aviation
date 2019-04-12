@@ -17,7 +17,7 @@ object MoveKafakaHDFS extends App {
   val conf = new SparkConf().setAppName("Demo Aviation Data").setMaster("spark://spark-master:7077").set("spark.streaming.kafka.maxRatePerPartition", "3000")
 
   // val conf = new SparkConf().setAppName("appName").setMaster("local[*]").set("spark.streaming.kafka.maxRatePerPartition", "100")
-  val streamingContext = new StreamingContext(conf, Seconds(180))
+  val streamingContext = new StreamingContext(conf, Seconds(600))
   // val streamingContext = new StreamingContext(conf, Seconds(10))
   val spark = SparkSession.builder.config(conf).getOrCreate()
   import spark.implicits._
