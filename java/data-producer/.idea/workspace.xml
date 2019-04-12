@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/src/main/scala/com/demo/aviation/MoveKafakaNoSQL.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/template.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/client-kafka.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-demo-aviation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-scheduler-demo-aviation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/kafka.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/manager.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka-shell.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/zookeeper.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
@@ -13,28 +26,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="161">
-                    <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-540958469">
@@ -211,7 +202,9 @@
     <option name="width" value="1873" />
     <option name="height" value="1092" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -353,12 +346,12 @@
       <workItem from="1554991451216" duration="1533000" />
       <workItem from="1554997151039" duration="4421000" />
       <workItem from="1555003386161" duration="2907000" />
-      <workItem from="1555027775544" duration="5471000" />
+      <workItem from="1555027775544" duration="6091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33137000" />
+    <option name="totallyTimeSpent" value="33757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-5" width="2499" height="1445" extended-state="6" />
@@ -458,20 +451,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
           <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/takeoff_climb_1.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="736">
+          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -485,10 +475,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/takeoff_climb_1.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="736">
-          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/aviation/controller/DataProducerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

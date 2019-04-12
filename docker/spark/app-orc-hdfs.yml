@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
    kafka-hdfs-demo:
-    image: alves7/move-kafka-hdfs:1.0-SNAPSHOT
+    image: jalves7/move-kafka-hdfs:1.0-SNAPSHOT
     hostname: kafka-hdfs-demo
 #    ports:
 #     - target: 4040

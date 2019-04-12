@@ -1,25 +1,28 @@
 package com.demo.aviation
 
-
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
-import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 import org.apache.spark.streaming.kafka010.KafkaUtils
 import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
+import org.apache.spark.streaming.{Seconds, StreamingContext}
+import com.mongodb.spark.MongoSpark
 
 /**
  * A Main to run Camel with MyRouteBuilder
  */
-object MoveKafakaHDFS extends App {
+object MoveKafakaNoSQL extends App {
   val conf = new SparkConf().setAppName("Demo Aviation Data").setMaster("spark://spark-master:7077").set("spark.streaming.kafka.maxRatePerPartition", "3000")
 
   // val conf = new SparkConf().setAppName("appName").setMaster("local[*]").set("spark.streaming.kafka.maxRatePerPartition", "100")
   val streamingContext = new StreamingContext(conf, Seconds(180))
   // val streamingContext = new StreamingContext(conf, Seconds(10))
-  val spark = SparkSession.builder.config(conf).getOrCreate()
+
+  val spark = SparkSession.builder.config(conf).config("spark.mongodb.input.uri", "mongodb://mongo-router1/demo-aviation.sensorRawData").config("spark.mongodb.output.uri", "mongodb://mongo-router2/demo-aviation.sensorRawData").getOrCreate()
+
+
   import spark.implicits._
 
   val kafkaParams = Map[String, Object](
@@ -66,8 +69,7 @@ object MoveKafakaHDFS extends App {
 
 //      df_final.show(5)
 
-      df_final.repartition(1).write.partitionBy("year", "month", "day", "hour")
-        .mode("append").format("orc").save("hdfs://namenodecm:9000/demo-aviation/sensorRawData")
+      MongoSpark.save(df_final.write.option("spark.mongodb.output.uri", "mongodb://mongo-router2/demo-aviation.sensorRawData").mode("append"));
 
     }
 
