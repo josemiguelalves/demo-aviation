@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d43994a-a047-4944-8f9a-dcf4e2467efb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../data-sample/takeoff_climb_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../data-sample/takeoff_climb_1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/takeoff_climb_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/takeoff_climb_1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT-docker-info.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT-docker-info.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/target/data-producer-demo-aviation-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/target/docker/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/target/docker/image-id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data-producer/target/test-classes/META-INF/docker/com.demo.aviation/data-producer-demo-aviation/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/target/test-classes/META-INF/docker/com.demo.aviation/data-producer-demo-aviation/image-id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
     </list>
@@ -42,7 +36,7 @@
         <counts>
           <entry key="Dockerfile" value="4" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Scala" value="1061" />
+          <entry key="Scala" value="1066" />
         </counts>
       </usages-collector>
     </session>
@@ -58,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="62" column="83" lean-forward="true" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
+            <state relative-caret-position="-391">
+              <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
               <folding>
                 <element signature="e#28#91#0" expanded="true" />
               </folding>
@@ -70,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="322">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -239,18 +233,18 @@
       <updated>1555005317196</updated>
       <workItem from="1555005320286" duration="4660000" />
       <workItem from="1555016644964" duration="2804000" />
-      <workItem from="1555027722999" duration="7156000" />
+      <workItem from="1555027722999" duration="7931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14620000" />
+    <option name="totallyTimeSpent" value="15395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-5" width="2499" height="1445" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25542367" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25542367" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -260,7 +254,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3971406" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3971406" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -299,20 +293,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="62" column="83" lean-forward="true" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
+        <state relative-caret-position="-391">
+          <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
           <folding>
             <element signature="e#28#91#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>
