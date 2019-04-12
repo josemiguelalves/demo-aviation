@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d43994a-a047-4944-8f9a-dcf4e2467efb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../move-kafka-nosql/src/main/scala/com/demo/aviation/MoveKafakaNoSQL.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-nosql/src/main/scala/com/demo/aviation/MoveKafakaNoSQL.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -231,12 +230,12 @@
       <updated>1555005317196</updated>
       <workItem from="1555005320286" duration="4660000" />
       <workItem from="1555016644964" duration="2804000" />
-      <workItem from="1555027722999" duration="10855000" />
+      <workItem from="1555027722999" duration="11320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18319000" />
+    <option name="totallyTimeSpent" value="18784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-5" width="2499" height="1445" extended-state="6" />
