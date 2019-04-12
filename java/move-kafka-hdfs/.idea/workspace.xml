@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d43994a-a047-4944-8f9a-dcf4e2467efb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/src/main/scala/com/demo/aviation/MoveKafakaNoSQL.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/template.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/client-kafka.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-demo-aviation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-scheduler-demo-aviation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/kafka.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/manager.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka-shell.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/zookeeper.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../data-producer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,7 +41,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
@@ -64,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="177">
@@ -245,18 +231,18 @@
       <updated>1555005317196</updated>
       <workItem from="1555005320286" duration="4660000" />
       <workItem from="1555016644964" duration="2804000" />
-      <workItem from="1555027722999" duration="10692000" />
+      <workItem from="1555027722999" duration="10855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18156000" />
+    <option name="totallyTimeSpent" value="18319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-5" width="2499" height="1445" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25542367" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25542367" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -266,7 +252,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3971406" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3971406" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,6 +291,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" selection-start-line="10" selection-end-line="176" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -312,13 +305,6 @@
           <folding>
             <element signature="e#28#91#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" selection-start-line="10" selection-end-line="176" selection-end-column="10" />
         </state>
       </provider>
     </entry>

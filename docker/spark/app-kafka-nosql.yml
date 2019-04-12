@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+   kafka-nosql-demo:
+    image: jalves7/move-kafka-nosql-1.0-SNAPSHOT
+    hostname: kafka-nosql-demo
+#    ports:
+#     - target: 4040
+#       published: 2840
+#       protocol: tcp
+#       mode: host
+    environment:
+     - ENABLE_INIT_DAEMON=false
+    restart: always
+#    deploy:
+#      restart_policy:
+#        condition: always
+#      placement:
+#        constraints:
+#          - node.hostname == ebithp-c8
+    networks:
+     cm_project:
+           aliases:
+               - kafka-nosql-demo
+networks:
+     cm_project:
+           external:
+             name: jalves7

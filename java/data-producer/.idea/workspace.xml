@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fe5d100-3766-4ae4-b22a-1dd731c620e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/src/main/scala/com/demo/aviation/MoveKafakaNoSQL.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../move-kafka-nosql/template.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/client-kafka.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-demo-aviation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/data-producer-scheduler-demo-aviation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/kafka.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/manager.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka-shell.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/start-kafka.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/kafka-zookeper/zookeeper.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/spark/app-orc-hdfs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../move-kafka-hdfs/src/main/scala/com/demo/aviation/MoveKafakaHDFS.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
