@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
+@EnableAsync
 public class DataProducerSchedulerController {
 
     @Autowired
     DataProducerSchedulerService dataProducerSchedulerService;
 
-
+@Async
     @RequestMapping(value= "/start-requester-demo-aviation",  method = GET)
     public void  startProcessingDataDemoAviation() {
 

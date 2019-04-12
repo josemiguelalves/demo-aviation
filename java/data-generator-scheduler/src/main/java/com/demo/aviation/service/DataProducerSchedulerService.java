@@ -53,7 +53,7 @@ public class DataProducerSchedulerService {
 
 
                 try {
-                    sleep(1000);
+                    sleep(10000);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
